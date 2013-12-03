@@ -1,0 +1,16 @@
+body{
+	text-align:center;
+}
+#content{
+	text-align:left;
+	margin: 0 auto;
+	width:800px;
+}
+
+div#botones{
+		
+}
+table{
+
+
+}

@@ -1,0 +1,15 @@
+body{
+	text-align:center;
+}
+#content{
+	text-align:left;
+	margin: 0 auto;
+}
+
+div#botones{
+		
+}
+table{
+
+
+}

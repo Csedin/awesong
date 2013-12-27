@@ -88,14 +88,20 @@ jQuery.fn.center = function () {
 }
 
 $(document).ready(function(){
+	// TOOLTIPS
+	$('#start_stop').tooltip();
+	$('#predicate').tooltip();
+	$('#idiomas_tooltip').tooltip();
+	$('#tooltip_recognition').tooltip();
+
 	// SPEECH RECOGNITION
-	$(".alert").hide();
+	$("#alert-error").hide();
 	var final_transcript = '';
 	var recognizing = false;
 	var ignore_onend = true;
 	var start_timestamp;
 	if (!('webkitSpeechRecognition' in window)) {
-		$(".alert").show();
+		$("#alert-error").show();
 	} else {
 		var recognition = new webkitSpeechRecognition();
 	}

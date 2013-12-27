@@ -27,27 +27,35 @@
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
-<div class="alert alert-danger">
+<div class="alert alert-danger" id="alert-error">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 	<strong>Error!</strong> Su navegador no soporta reconocimiento de voz. 
 </div>
 
+<div class="alert alert-info">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<strong>Atención!</strong> <br>
+	<li>Awesong solo funciona con el navegador <a href=http://www.google.com/chrome>Google Chrome</a>.</li>
+	<li>Si su navegador le solicita permiso para utilizar el micrófono, haga clic en <b>Permitir</b>.</li>
+	<li>Haga clic en el botón <b>Awesong</b> y diga el nombre de su canción favorita!</li>
+</div>
+
 <div id="center-box" class="center-box">
-	<button id="start_stop" type="button" class="btn btn-info btn-block">
+	<button id="start_stop" type="button" data-placement="left" data-toggle="tooltip" data-original-title="Presione este botón y diga el nombre de su canción favorita." class="btn btn-info btn-block">
 		<img id="start_img" src="mic.gif" alt="Start">
 		<span>Awesong!</span>
 		<img id="start_img" src="mic.gif" alt="Start">
 	</button>&nbsp;
 	<div class="row">
 	  <div class="col-xs-4">
-		<textarea id="predicate" class="form-control" rows="1" placeholder="Predicado"></textarea>
+		<textarea id="predicate" data-placement="top" data-toggle="tooltip" data-original-title="Si quiere anteponer una palabra antes de que Awesong busque su canción, escribala aquí." class="form-control" rows="1" placeholder="Predicado"></textarea>
 	  </div>
-	  <div class="col-xs-8">
+	  <div id="tooltip_recognition" data-placement="top" data-toggle="tooltip" data-original-title="Aquí se desplegará el título de la canción que solicite."class="col-xs-8">
 		<textarea disabled id="recognition-zone" class="form-control" style="background: #fff;" rows="1"></textarea>
 	  </div>
 	</div>
 <br>
-	<div class="row">
+	<div id="idiomas_tooltip" class="row" data-placement="top" data-toggle="tooltip" data-original-title="Cambie el idioma del título de la canción, para mejorar el reconocimiento de voz.">
 	  <div class="col-xs-6">
 		<select class="form-control" id="select_language" onchange="updateCountry()"></select>
 	  </div>

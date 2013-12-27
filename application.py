@@ -141,7 +141,7 @@ def do_registro():
 def mysongs():
     db = get_db()
     cursor = db.cursor()
-    query = cursor.execute('SELECT url, nombre_cancion, fecha_log FROM cancion,log_cancion WHERE nombre = nombre_cancion AND usuario = ? GROUP BY fecha_log ORDER BY fecha_log',
+    query = cursor.execute('SELECT url, nombre_cancion, fecha_log FROM cancion,log_cancion WHERE nombre = nombre_cancion AND usuario = ? GROUP BY fecha_log ORDER BY fecha_log DESC',
                                 [kuki['usuario'].value.strip()])
     f = open('myfile','w')
     f.write(kuki['usuario'].value.strip()) # python will convert \n to os.linesep
@@ -174,6 +174,6 @@ def index():
     
 if __name__ == '__main__':
         bottle.debug(True)
-        bottle.run(app = app, host='localhost', port=8080)
+        bottle.run(app = app, host='localhost', port=80)
 
 

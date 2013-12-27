@@ -89,11 +89,16 @@ jQuery.fn.center = function () {
 
 $(document).ready(function(){
 	// SPEECH RECOGNITION
+	$(".alert").hide();
 	var final_transcript = '';
 	var recognizing = false;
 	var ignore_onend = true;
 	var start_timestamp;
-	var recognition = new webkitSpeechRecognition();
+	if (!('webkitSpeechRecognition' in window)) {
+		$(".alert").show();
+	} else {
+		var recognition = new webkitSpeechRecognition();
+	}
 	recognition.continuous = true;
 	
 	for (var i = 0; i < langs.length; i++) {
@@ -121,8 +126,14 @@ $(document).ready(function(){
 				interim_transcript += event.results[i][0].transcript;
 			}
 		}
+		var predicate = $('#predicate').val().toLowerCase();
+		if (final_transcript.indexOf(predicate) == 0)
+			searchAndPlay(final_transcript.substring(predicate.length+1,final_transcript.length));
+		console.log("predicate: "+predicate);
+		console.log("final_transcript: "+final_transcript);
+		console.log("index: "+final_transcript.indexOf(predicate));
+		console.log("keyword: "+final_transcript.substring(predicate.length+1,final_transcript.length));
 		$('#recognition-zone').val(capitalize(final_transcript));
-		searchAndPlay(final_transcript);
 		final_transcript = '';
 	};
 	

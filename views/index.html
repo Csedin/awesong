@@ -27,8 +27,10 @@
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
-
-
+<div class="alert alert-danger">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<strong>Error!</strong> Su navegador no soporta reconocimiento de voz. 
+</div>
 
 <div id="center-box" class="center-box">
 	<button id="start_stop" type="button" class="btn btn-info btn-block">
@@ -36,7 +38,14 @@
 		<span>Awesong!</span>
 		<img id="start_img" src="mic.gif" alt="Start">
 	</button>&nbsp;
-	<textarea disabled id="recognition-zone" class="form-control" style="background: #fff;" rows="1"></textarea>
+	<div class="row">
+	  <div class="col-xs-4">
+		<textarea id="predicate" class="form-control" rows="1" placeholder="Predicado"></textarea>
+	  </div>
+	  <div class="col-xs-8">
+		<textarea disabled id="recognition-zone" class="form-control" style="background: #fff;" rows="1"></textarea>
+	  </div>
+	</div>
 <br>
 	<div class="row">
 	  <div class="col-xs-6">
@@ -51,3 +60,5 @@
 	<div id="title-song"></div>
 	<div id='youtube-player-container'> </div>
 </div>
+
+<script src="speech.js"></script>

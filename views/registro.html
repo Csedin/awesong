@@ -1,0 +1,37 @@
+%rebase('base.html',title='Awesong Registro de Usuario')
+
+
+<form class="form-horizontal form-register" name="register" action="/registro" method="post">
+	<h2 class="form-signin-heading">Awesong: Nuevo Usuario</h2>
+	% if defined('error'):
+	<div class="alert alert-danger">
+		<strong>Error!</strong>
+		Ha ocurrido un problema durante el registro. <br>
+		{{error}}
+	</div>
+	% end
+	<div class="form-group">
+		<label for="name" class="col-sm-2 control-label">Nombre Completo</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" name="name" placeholder="Nombre" required autofocus>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="user" class="col-sm-2 control-label">Nombre de Usuario</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" name="user" placeholder="Nombre de Usuario" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="pass" class="col-sm-2 control-label">Contraseña</label>
+		<div class="col-sm-10">
+			<input type="password" class="form-control" name="pass" placeholder="Contraseña" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button type="submit" class="btn btn-lg btn-primary btn-block">Registrarse</button>
+		</div>
+	</div>
+</form>
+

@@ -1,0 +1,20 @@
+%rebase('base.html',title='Awesong Login')
+<form class="form-signin" name="login" action="/login" method="post">
+	<h2 class="form-signin-heading">Awesong</h2>
+	% if defined('registro'):
+	<div class="alert alert-info">
+		<strong>Éxito!</strong>
+		El usuario se ha registrado exitosamente.
+	</div>
+	% end
+	% if defined('error'):
+	<div class="alert alert-danger">
+		<strong>Error!</strong>
+		{{error}}
+	</div>
+	% end
+	<input type="text" class="form-control" placeholder="Nombre de usuario" required autofocus name="username">
+	<input type="password" class="form-control" placeholder="Contraseña" required name="password">
+	<h5><a href="/registro" value="register-me"> Registrate</a></h5>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+</form>
